@@ -77,13 +77,13 @@ while True:
 
 
         if keys[2] == True and DotPos[1] != 75:
-            DotPos[1] -= 120
             keys[2] = False
+            DotPos[1] -= 120
             ButtonSelection -=1
 
         if keys[3] == True and DotPos[1] != 315:
-            DotPos[1] += 120
             keys[3] = False
+            DotPos[1] += 120
             ButtonSelection +=1
 
         if keys[4] == True:
@@ -99,6 +99,17 @@ while True:
     if InGame == True:
         screen.fill((51,153,51))
         screen.blit(Player, PlayerDrawCoords)
+
+
+        if keys[0] == True:
+            PlayerCoords[0] -=1
+        if keys[1] == True:
+            PlayerCoords[0] +=1
+        if keys[3] == True:
+            PlayerCoords[1] -=1
+        if keys[4] == True:
+            PlayerCoords[1] +=1
+
         
         
         
