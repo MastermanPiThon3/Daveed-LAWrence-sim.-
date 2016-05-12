@@ -24,9 +24,14 @@ ButtonSelection = 0
 
 keys = [False, False, False, False, False]
 PlayerCoords = [0, 0]
-PlayerDrawCoords = [288,208]
+x = 288
+y = 208
+PlayerDrawCoords = [x,y]
 EntityCoords = []
-Player = pygame.image.load("dude.png")
+def InDegrees(radians):
+    return 360 - radians * 57.3
+PlayerImg = pygame.image.load("dude.png")
+
 
 screen=pygame.display.set_mode((width, height))
 
@@ -98,7 +103,7 @@ while True:
         
     if InGame == True:
         screen.fill((51,153,51))
-        screen.blit(Player, PlayerDrawCoords)
+        screen.blit(PlayerImg, PlayerDrawCoords)
 
 
         if keys[0] == True:
@@ -110,9 +115,9 @@ while True:
         if keys[4] == True:
             PlayerCoords[1] +=1
 
+        print PlayerCoords     
         
-        
-        
+     
 
     pygame.display.flip()
 
